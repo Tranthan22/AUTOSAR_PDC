@@ -15,25 +15,17 @@
 /* include headers                                                            */
 /*----------------------------------------------------------------------------*/
 
-
 /*----------------------------------------------------------------------------*/
 /* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
-extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_AlarmSystem_R_IO_WarningAlarm( VAR(AlarmSystem_IoHwAb_AlarmLevel, AUTOMATIC) value);
+
+extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_AlarmSystem_R_IO_WarningAlarm( VAR(AlarmSystem_IoHwAb_AlarmLevel, AUTOMATIC) alarm_warning);
 #define Rte_Call_R_IO_WarningAlarm Rte_Call_AlarmSystem_R_IO_WarningAlarm
 
-extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel( VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) value );
+extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel( VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) alarm_level );
 #define Rte_Read_R_RP_Alarm_ReadAlarmLevel Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel
 
-#define AppAlarm_START_SEC_CODE
-#include "AppAlarm_MemMap.h"
 FUNC(void, AUTOMATIC) ExecuteAlarmCommand( VAR(void, AUTOMATIC) );
-#define AppAlarm_STOP_SEC_CODE
-#define RTE_RUNNABLE_Run_ExecuteAlarmCommand ExecuteAlarmCommand
-
-
-
-
 
 #endif /* RTE_ALARM_H */
 
