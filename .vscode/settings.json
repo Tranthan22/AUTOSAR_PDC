@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.json": "json",
-        "rte_ussensor.h": "c"
+        "rte_ussensor.h": "c",
+        "rte_alarmsystem.h": "c"
     }
 }
