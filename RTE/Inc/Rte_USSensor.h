@@ -15,19 +15,20 @@
 /*----------------------------------------------------------------------------*/
 /* include headers                                                            */
 /*----------------------------------------------------------------------------*/
-#include "Rte_Sensor_Type.h"
-#include "Rte_DataHandleType.h"
+
 
 /*----------------------------------------------------------------------------*/
 /* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
-extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_AppSensor_R_AppSensorToIoHwAb_IoHwAb_Q_SensorGet( VAR(AppIo_IoHwAb_Q_SensorIdType, AUTOMATIC) id, P2VAR(AppIo_IoHwAb_Q_SensorGroupStatusType, AUTOMATIC, RTE_APPL_DATA) value );
-#define Rte_Call_R_AppSensorToIoHwAb_IoHwAb_Q_SensorGet Rte_Call_AppSensor_R_AppSensorToIoHwAb_IoHwAb_Q_SensorGet
+extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_USSensor_R_IO_GetDistance( VAR(USSensor_IoHwAb_SensorIdType, AUTOMATIC) id, P2VAR(USSensor_uint8p, AUTOMATIC, RTE_APPL_DATA) value );
+#define Rte_Call_R_IO_GetDistance Rte_Call_USSensor_R_IO_GetDistance
 
+extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance( VAR(USSensor_uint8, AUTOMATIC, RTE_APPL_DATA) value );
+#define Rte_Call_P_PP_DistanceUS_SendDistance Rte_Write_USSensor_P_PP_DistanceUS_SendDistance
 
 #define AppSensor_START_SEC_CODE
 #include "AppSensor_MemMap.h"
-FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) );
+FUNC(void, AUTOMATIC) MeasureDistance( VAR(void, AUTOMATIC) );
 #define AppSensor_STOP_SEC_CODE
 #define RTE_RUNNABLE_Run_MeasureDistance MeasureDistance
 

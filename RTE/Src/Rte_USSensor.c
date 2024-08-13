@@ -12,10 +12,7 @@
 /*----------------------------------------------------------------------------*/
 /* include headers                                                            */
 /*----------------------------------------------------------------------------*/
-// #include "Os.h"
-// #include "Rte_Internal.h"
-// #include "Com.h"
-#include "Rte_AppSensor.h"
+#include "Rte_USSensor.h"
 
 /*----------------------------------------------------------------------------*/
 /* variables                                                                  */
@@ -25,7 +22,29 @@
 /* functions and function style macros                                        */
 /*----------------------------------------------------------------------------*/
 
-extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_Q_SensorGet( VAR(AppIo_IoHwAb_Q_SensorIdType, AUTOMATIC), P2VAR(AppIo_IoHwAb_SensorValueGroupType, AUTOMATIC, RTE_APPL_DATA));
+extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_GetDistance( VAR(AppIo_IoHwAb_SensorIdType, AUTOMATIC), P2VAR(AppIo_IoHwAb_SensorValueGroupType, AUTOMATIC, RTE_APPL_DATA));
+/******************************************************************************/
+/* ModuleID    :                                                              */
+/* ServiceID   :                                                              */
+/* Name        : Rte_Call_USSensor_R_IO_GetDistance                           */
+/* Param       :                                                              */
+/* Return      :                                                              */
+/* Contents    : Ecu Configuration(Ecuc)                                      */
+/* Author      : Group 3                                                      */
+/* Note        :                                                              */
+/******************************************************************************/
+#define RTE_START_SEC_CODE_EcucPartition_0
+#include "Rte_MemMap.h"
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_USSensor_R_IO_GetDistance( VAR(USSensor_IoHwAb_SensorIdType, AUTOMATIC) id, P2VAR(USSensor_uint8p, AUTOMATIC, RTE_APPL_DATA) value ) {
+    VAR(Std_ReturnType, AUTOMATIC) return_value;
+
+    return_value = IoHwAb_GetDistance( id , value );
+    return return_value;
+}
+#define RTE_STOP_SEC_CODE_EcucPartition_0
+
+
+extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_SendDistance( VAR(AppIo_IoHwAb_SensorIdType, AUTOMATIC), P2VAR(AppIo_IoHwAb_SensorValueGroupType, AUTOMATIC, RTE_APPL_DATA));
 /******************************************************************************/
 /* ModuleID    :                                                              */
 /* ServiceID   :                                                              */
@@ -38,17 +57,16 @@ extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_Q_SensorGet( VAR(AppIo_IoHwAb_Q_
 /******************************************************************************/
 #define RTE_START_SEC_CODE_EcucPartition_0
 #include "Rte_MemMap.h"
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_AppSensor_R_AppSensorToIoHwAb_IoHwAb_Q_SensorGet( VAR(AppIo_IoHwAb_Q_AdcIdType, AUTOMATIC) id, P2VAR(AppIo_IoHwAb_AdcValueGroupType, AUTOMATIC, RTE_APPL_DATA) value) {
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_USSensor_R_IO_SensorGet( VAR(USSensor_IoHwAb_SensorIdType, AUTOMATIC) id, P2VAR(USSensor_uint8p, AUTOMATIC, RTE_APPL_DATA) value ) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
 
-    return_value = IoHwAb_Q_SensorGet( id, value );
+    return_value = IoHwAb_Q_SensorGet( id , value );
     return return_value;
 }
 #define RTE_STOP_SEC_CODE_EcucPartition_0
 
-
 /**********************************  Section 2 ******************************* */
-extern FUNC(void, AppAdc_CODE) AppAdc_10ms( VAR(void, AUTOMATIC) );
+extern FUNC(void, AppAdc_CODE) MeasureDistance( VAR(void, AUTOMATIC) );
 /******************************************************************************/
 /* ModuleID    :                                                              */
 /* ServiceID   :                                                              */
