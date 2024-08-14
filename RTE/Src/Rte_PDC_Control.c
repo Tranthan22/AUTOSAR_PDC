@@ -31,11 +31,12 @@ FUNC(void, RTE_CODE_EcucPartition_0) Rte_COMCbk_RP_DistanceUS(void) {
 
     VAR(void, AUTOMATIC)Com_ReceiveSignalGroup(DistanceGroup);
 
-    //Copy the data of the signal to restore
-    VAR(void, AUTOMATIC)Com_ReceiveSignal(DistanceID_S0, &Distance_S0);
-    VAR(void, AUTOMATIC)Com_ReceiveSignal(DistanceID_S1, &Distance_S1);
-    VAR(void, AUTOMATIC)Com_ReceiveSignal(DistanceID_S2, &Distance_S2);
-    VAR(void, AUTOMATIC)Com_ReceiveSignal(DistanceID_S3, &Distance_S3);
+    //Copy the data of the signal to the referenced position
+
+    VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S1);
+    VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S2);
+    VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S3);
+    VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S4);
 
     //Set event CE_DistanceDataReceived
     VAR(void, AUTOMATIC)SetEvent(DistanceAlarmTask, OS_CE_DistanceDataReceived);
@@ -46,27 +47,77 @@ FUNC(void, RTE_CODE_EcucPartition_0) Rte_COMCbk_RP_DistanceUS(void) {
 */
 /******************************************************************************/
 
-extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_ReadDistanceUS( VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) );
+VAR(Std_ReturnType, AUTOMATIC) Rte_Read_AppUSSensor_Value_status = RTE_E_NEVER_RECEIVED;
 
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_ParkDistanceControl_R_RP_DistanceUS_ReadDistanceUS( VAR(ParkDistanceControl_uint8, AUTOMATIC, RTE_APPL_DATA) distanceUS ) {
-    VAR(Std_ReturnType, AUTOMATIC) return_value;
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_ParkDistanceControl_R_RP_DistanceUS_ReadDistance_S0( P2VAR(ParkDistanceControl_uint8, AUTOMATIC, RTE_APPL_DATA) distanceUS0 ) {
+    VAR(Std_ReturnType, AUTOMATIC) ret_val;
 
-    return_value = IoHwAb_ReadDistanceUS( distanceUS );
-    return return_value;
+    RTE_Q_LOCK();
+    *distanceUS0 = Distance_S0;
+    ret_val = Rte_Read_AppUSSensor_Value_status;
+    RTE_Q_UNLOCK();
+
+    return ret_val;
 } 
 
+
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_ParkDistanceControl_R_RP_DistanceUS_ReadDistance_S1( P2VAR(ParkDistanceControl_uint8, AUTOMATIC, RTE_APPL_DATA) distanceUS1 ) {
+    VAR(Std_ReturnType, AUTOMATIC) ret_val;
+
+    RTE_Q_LOCK();
+    *distanceUS1 = Distance_S1;
+    ret_val = Rte_Read_AppUSSensor_Value_status;
+    RTE_Q_UNLOCK();
+
+    return ret_val;
+}
+
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_ParkDistanceControl_R_RP_DistanceUS_ReadDistance_S2( P2VAR(ParkDistanceControl_uint8, AUTOMATIC, RTE_APPL_DATA) distanceUS3 ) {
+    VAR(Std_ReturnType, AUTOMATIC) ret_val;
+
+    RTE_Q_LOCK();
+    *distanceUS2 = Distance_S2;
+    ret_val = Rte_Read_AppUSSensor_Value_status;
+    RTE_Q_UNLOCK();
+
+    return ret_val;
+}
+
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_ParkDistanceControl_R_RP_DistanceUS_ReadDistance_S3( P2VAR(ParkDistanceControl_uint8, AUTOMATIC, RTE_APPL_DATA) distanceUS4 ) {
+    VAR(Std_ReturnType, AUTOMATIC) ret_val;
+
+    RTE_Q_LOCK();
+    *distanceUS3 = Distance_S3;
+    ret_val = Rte_Read_AppUSSensor_Value_status;
+    RTE_Q_UNLOCK();
+
+    return ret_val;
+}
 /******************************************************************************/
 /*
 */
 /******************************************************************************/
 
-extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_WriteDistancetoAlarm( VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) );
 
 FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_ParkDistanceControl_P_PP_Alarm_SendDistancetoAlarm( VAR(ParkDistanceControl_uint8, AUTOMATIC, RTE_APPL_DATA) distance_to_alarm ) {
-    VAR(Std_ReturnType, AUTOMATIC) return_value;
+    VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
+    VAR(Std_ReturnType, AUTOMATIC) ret;
+    VAR(AUTOSAR_uint8, AUTOMATIC) tmp_data = data;
 
-    return_value = IoHwAb_WriteDistancetoAlarm( distance_to_alarm );
-    return return_value;
+    ret = Com_SendSignal( ComConf_ComSignal_ComISignal_HS_CAN1_DistanceUS, &tmp_data );
+    switch( ret ) {
+    case COM_SERVICE_NOT_AVAILABLE:
+        ret_val = RTE_E_COM_STOPPED;
+        break;
+    case COM_BUSY:
+        ret_val = RTE_E_COM_BUSY;
+        break;
+    default:
+        /* nothing */
+        break;
+    }
+
+    return ret_val;
 }
 
 

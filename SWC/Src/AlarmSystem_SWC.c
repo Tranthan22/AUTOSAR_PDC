@@ -12,8 +12,6 @@ FUNC(void, Alarm_CODE) ExecuteAlarmCommand( VAR(void, AUTOMATIC) )
     
     // Receiver  through port RP_Alarm
 
-    
-
 	Rte_Call_WdgMCheckpointReached(SE4_ID,CP_ID_8);                     // End checkpoint Deadline SE4
     Rte_Call_WdgMCheckpointReached(SE3_ID,CP_ID_6);                     // End checkpoint Deadline SE3
 

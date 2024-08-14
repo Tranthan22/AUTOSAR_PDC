@@ -21,15 +21,17 @@
 /*----------------------------------------------------------------------------*/
 /* functions and function style macros                                        */
 /*----------------------------------------------------------------------------*/
+static VAR(AUTOSAR_uint8, AUTOMATIC) Activate_PDCControl;
+VAR(Std_ReturnType, AUTOMATIC) Rte_Read_AppPDCService_Value_status = RTE_E_NEVER_RECEIVED;
 
-extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_R_RP_PDCService_StartPDCControl( VAR(PackDistanceControl_Service_uint8, AUTOMATIC,RTE_APPL_DATA) );
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_PDCService_R_RP_PDCService_StartPDCControl( P2VAR(PackDistanceControl_Service_uint8, AUTOMATIC) Start_PDCControl) {
+    VAR(Std_ReturnType, AUTOMATIC) ret_val;
+    RTE_Q_LOCK();
+    *Start_PDCControl = Activate_PDCControl;
+    ret_val = Rte_Read_AppPDCService_Value_status;
+    RTE_Q_UNLOCK();
 
-
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_PDCService_R_RP_PDCService_StartPDCControl( VAR(PackDistanceControl_Service_uint8, AUTOMATIC) Start_PDCControl) {
-    VAR(Std_ReturnType, AUTOMATIC) return_value;
-
-    return_value = IoHwAb_R_RP_PDCService_StartPDCControl( Start_PDCControl );
-    return return_value;
+    return ret_val;
 }
 
 
@@ -39,12 +41,12 @@ FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_PDCService_R_RP_PDCServi
 /******************************************************************************/
 
 
-extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_R_RP_PDCStatus_SendStatusPDCControl( VAR(PDCService_Status_uint8, AUTOMATIC,RTE_APPL_DATA) );
+extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_R_RP_PDCStatus_SendPDCStatus( VAR(PDCService_Status_uint8, AUTOMATIC,RTE_APPL_DATA) );
 
 
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_PDCService_R_IO_PDCStatus_GetPDCStatus( VAR(PDCService_Status_uint8, AUTOMATIC) getPDCStatus ) {
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_PDCService_R_IO_PDCStatus_SendPDCStatus( VAR(PDCService_Status_uint8, AUTOMATIC) sendPDCStatus ) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
-    return_value = IoHwAb_R_RP_PDCStatus_SendStatusPDCControl( getPDCStatus );
+    return_value = IoHwAb_R_RP_PDCStatus_SendPDCStatus( getPDCStatus );
     return return_value;
 }
 
