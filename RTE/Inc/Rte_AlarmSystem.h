@@ -26,6 +26,9 @@ extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_AlarmSystem_R_RP_
 #define Rte_Read_R_RP_Alarm_ReadAlarmLevel Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel
 
 FUNC(void, AUTOMATIC) ExecuteAlarmCommand( VAR(void, AUTOMATIC) );
+#define RTE_RUNNABLE_Run_ExecuteAlarmCommand ExecuteAlarmCommand
+
+
 
 #endif /* RTE_ALARM_H */
 

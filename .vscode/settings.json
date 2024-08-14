@@ -2,7 +2,8 @@
     "files.associations": {
         "*.json": "json",
         "rte_ussensor.h": "c",
-        "ultrasonicsensor_swc.h": "c"
+        "ultrasonicsensor_swc.h": "c",
+        "rte_pdc_control.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
