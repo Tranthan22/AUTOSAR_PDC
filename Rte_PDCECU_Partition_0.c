@@ -11,9 +11,7 @@
 /*----------------------------------------------------------------------------*/
 /* include headers                                                            */
 /*----------------------------------------------------------------------------*/
-#include "Rte_PDC_Control.h"
-#include "Rte_PDC_Service.h"
-#include "Rte_PDC_AlarmSystem.h"
+
 
 /*----------------------------------------------------------------------------*/
 /* variables                                                                  */
@@ -24,6 +22,9 @@
 /*----------------------------------------------------------------------------*/
 /* functions and function style macros                                        */
 /*----------------------------------------------------------------------------*/
+extern FUNC(void, RTE_CODE_EcucPartition_0) Rte_ProcessControl( VAR(void, AUTOMATIC) );
+extern FUNC(void, RTE_CODE_EcucPartition_0) Rte_ExecuteAlarmCommand( VAR(void, AUTOMATIC) );
+
 TASK (DistanceAlarmTask) {
     VAR(EventMaskType, AUTOMATIC) Event;
 
@@ -47,6 +48,8 @@ TASK (DistanceAlarmTask) {
     }
 }
 
+/*==========================================================================*/
+extern FUNC(void, RTE_CODE_EcucPartition_0) Rte_PDCService ( VAR(void, AUTOMATIC) );
 
 TASK (ServiceTask) {
     VAR(EventMaskType, AUTOMATIC) Event;

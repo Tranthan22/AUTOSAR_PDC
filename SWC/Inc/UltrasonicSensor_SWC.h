@@ -1,4 +1,4 @@
-#include "Rte_AppSensor.h"
+#include "Rte_USSensor.h"
 
 #define NUM_OF_SENSOR           4
 #define SENSOR_ID_0             0

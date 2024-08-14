@@ -294,6 +294,7 @@ FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_AppComTxRx_AtmResp_AtmR
     VAR(AUTOSAR_uint8, AUTOMATIC) tmp_data = data;
 
     ret = Com_SendSignal( ComConf_ComSignal_ComISignal_HS_CAN1_AtmResp_AtmResp_Sig_AddExp4, &tmp_data );
+    
     switch( ret ) {
     case COM_SERVICE_NOT_AVAILABLE:
         ret_val = RTE_E_COM_STOPPED;

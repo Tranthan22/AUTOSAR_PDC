@@ -1,7 +1,7 @@
-#include "UltrasonicSensor_SWC.h"
+#include "Rte_AlarmSystem.h"
 
 
-FUNC(void, AppAlarm_CODE) ExecuteAlarmCommand( VAR(void, AUTOMATIC) )
+FUNC(void, Alarm_CODE) ExecuteAlarmCommand( VAR(void, AUTOMATIC) )
 {
 	static uint8 alarm_level = 0;
 

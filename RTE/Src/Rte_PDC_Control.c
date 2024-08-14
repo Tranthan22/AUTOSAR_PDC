@@ -17,10 +17,10 @@
 /*----------------------------------------------------------------------------*/
 /* variables                                                                  */
 /*----------------------------------------------------------------------------*/
-static VAR(void, AUTOMATIC) Distance_S1;
-static VAR(void, AUTOMATIC) Distance_S2;
-static VAR(void, AUTOMATIC) Distance_S3;
-static VAR(void, AUTOMATIC) Distance_S4;
+static VAR(USSensor_uint8, AUTOMATIC) Distance_S0;
+static VAR(USSensor_uint8, AUTOMATIC) Distance_S1;
+static VAR(USSensor_uint8, AUTOMATIC) Distance_S2;
+static VAR(USSensor_uint8, AUTOMATIC) Distance_S3;
 
 VAR(Com_SignalGroupIdType, AUTOMATIC) DistanceGroup;
 
@@ -31,11 +31,11 @@ FUNC(void, RTE_CODE_EcucPartition_0) Rte_COMCbk_RP_DistanceUS(void) {
 
     VAR(void, AUTOMATIC)Com_ReceiveSignalGroup(DistanceGroup);
 
-    //Copy the data of the signal to the referenced position
-    VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S1);
-    VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S2);
-    VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S3);
-    VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S4);
+    //Copy the data of the signal to restore
+    VAR(void, AUTOMATIC)Com_ReceiveSignal(DistanceID_S0, &Distance_S0);
+    VAR(void, AUTOMATIC)Com_ReceiveSignal(DistanceID_S1, &Distance_S1);
+    VAR(void, AUTOMATIC)Com_ReceiveSignal(DistanceID_S2, &Distance_S2);
+    VAR(void, AUTOMATIC)Com_ReceiveSignal(DistanceID_S3, &Distance_S3);
 
     //Set event CE_DistanceDataReceived
     VAR(void, AUTOMATIC)SetEvent(DistanceAlarmTask, OS_CE_DistanceDataReceived);

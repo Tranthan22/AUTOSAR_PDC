@@ -1,7 +1,7 @@
 #include "UltrasonicSensor_SWC.h"
 
 
-FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) )
+FUNC(void, USSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) )
 {
 	static uint8[4] distance = 0;
     /* Read data from 4 sensors */
@@ -20,7 +20,3 @@ FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) )
     return;	
 }
 
-FUNC(void, AppSensor_CODE) WarningAlarm(VAR(void, AUTOMATIC))
-{
-    
-}
