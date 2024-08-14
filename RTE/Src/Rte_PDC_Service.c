@@ -42,7 +42,7 @@ FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_PDCService_R_RP_PDCServi
 extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_R_RP_PDCStatus_SendStatusPDCControl( VAR(PDCService_Status_uint8, AUTOMATIC,RTE_APPL_DATA) );
 
 
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_PDCService_R_IO_PDCStatus_GetPDCStatus( VAR(PDCService_Status_uint8, AUTOMATIC) ) {
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_PDCService_R_IO_PDCStatus_GetPDCStatus( VAR(PDCService_Status_uint8, AUTOMATIC) getPDCStatus ) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
     return_value = IoHwAb_R_RP_PDCStatus_SendStatusPDCControl( getPDCStatus );
     return return_value;
