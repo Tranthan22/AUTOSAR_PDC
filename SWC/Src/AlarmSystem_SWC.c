@@ -10,5 +10,5 @@ FUNC(void, AppAlarm_CODE) ExecuteAlarmCommand( VAR(void, AUTOMATIC) )
     
     // Receiver  through port RP_Alarm
 
-    return;	
+    return;
 }
