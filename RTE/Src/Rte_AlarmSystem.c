@@ -37,7 +37,6 @@ FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_AlarmSystem_R_IO_Warning
 /*
 */
 /******************************************************************************/
-
 extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_ReadAlarmLevel( VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) );
 
 FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel( VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) alarm_level ) {

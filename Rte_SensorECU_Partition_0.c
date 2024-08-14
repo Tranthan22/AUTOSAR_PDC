@@ -30,13 +30,12 @@ TASK (DistanceMeasureTask) {
     {
         (VAR(void, AUTOMATIC))WaitEvent( OS_TE_50ms_DistanceMeasure );
         Event = 0U;
-        (VAR(void, AUTOMATIC))GetEvent( OS_Task_DistanceMeasureTask, &Event );
-        (VAR(void, AUTOMATIC))ClearEvent( OS_TE_50ms_DistanceMeasure );
+        (VAR(void, AUTOMATIC))GetEvent( DistanceMeasureTask, &Event );
+        (VAR(void, AUTOMATIC))ClearEvent( Event & ( OS_TE_50ms_DistanceMeasure ) );
         if( (Event & OS_TE_50ms_DistanceMeasure) > 0U ) {
 
             Rte_MeasureDistance();
             
-
         } else {
             /* No treatment */
         }
