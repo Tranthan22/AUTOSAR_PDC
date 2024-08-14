@@ -19,3 +19,8 @@ FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) )
 
     return;	
 }
+
+FUNC(void, AppSensor_CODE) WarningAlarm(VAR(void, AUTOMATIC))
+{
+    
+}
