@@ -24,7 +24,6 @@
 
 extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_SendAlarmWarning( VAR(AlarmSystem_IoHwAb_AlarmLevel, AUTOMATIC) );
 
-
 FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_AlarmSystem_R_IO_WarningAlarm( VAR(AlarmSystem_IoHwAb_AlarmLevel, AUTOMATIC) alarm_warning) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
 
@@ -37,13 +36,19 @@ FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_AlarmSystem_R_IO_Warning
 /*
 */
 /******************************************************************************/
-extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_ReadAlarmLevel( VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) );
 
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel( VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) alarm_level ) {
-    VAR(Std_ReturnType, AUTOMATIC) return_value;
+static VAR(AUTOSAR_uint8, AUTOMATIC) Distance_Group;
+VAR(Std_ReturnType, AUTOMATIC) Rte_Read_AppPDCControl_Value_status = RTE_E_NEVER_RECEIVED;
 
-    return_value = IoHwAb_Q_SensorGet( alarm_level );
-    return return_value;
+FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel( P2VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) alarm_level ) {
+    VAR(Std_ReturnType, AUTOMATIC) ret_val;
+
+    RTE_Q_LOCK();
+    *alarm_level = Distance_Group;
+    ret_val = Rte_Read_AppPDCControl_Value_status;
+    RTE_Q_UNLOCK();
+
+    return ret_val;
 }
 
 
