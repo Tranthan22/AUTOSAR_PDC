@@ -98,24 +98,18 @@ FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_ParkDistanceControl_R_RP
 */
 /******************************************************************************/
 
+extern VAR(uint8, AUTOMATIC) Rte_Read_ParkDistanceControl_P_PP_Alarm_SendDistancetoAlarm_value;
+extern VAR(Std_ReturnType, AUTOMATIC) Rte_Read_ParkDistanceControl_P_PP_Alarm_SendDistancetoAlarm_status;
+#define RTE_START_SEC_CODE_EcucPartition_0
 
 FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_ParkDistanceControl_P_PP_Alarm_SendDistancetoAlarm( VAR(ParkDistanceControl_uint8, AUTOMATIC, RTE_APPL_DATA) distance_to_alarm ) {
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
-    VAR(Std_ReturnType, AUTOMATIC) ret;
-    VAR(AUTOSAR_uint8, AUTOMATIC) tmp_data = data;
 
-    ret = Com_SendSignal( ComConf_ComSignal_ComISignal_HS_CAN1_DistanceUS, &tmp_data );
-    switch( ret ) {
-    case COM_SERVICE_NOT_AVAILABLE:
-        ret_val = RTE_E_COM_STOPPED;
-        break;
-    case COM_BUSY:
-        ret_val = RTE_E_COM_BUSY;
-        break;
-    default:
-        /* nothing */
-        break;
-    }
+    RTE_Q_LOCK();
+    Rte_Read_ParkDistanceControl_P_PP_Alarm_SendDistancetoAlarm_value = distance_to_alarm;
+    Rte_Read_ParkDistanceControl_P_PP_Alarm_SendDistancetoAlarm_status = RTE_E_OK;
+
+    RTE_Q_UNLOCK();
 
     return ret_val;
 }
