@@ -78,6 +78,8 @@ FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_AppComTxRx_AtmResp_AtmR
 /******************************************************************************/
 #define RTE_START_SEC_CODE_EcucPartition_0
 #include "Rte_MemMap.h"
+extern FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_AppComTxRx_AtmResp_AtmResp_Sig_TestFunction( VAR(AUTOSAR_uint8, AUTOMATIC) data ) {
+
 FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_AppComTxRx_AtmResp_AtmResp_Sig_TestFunction( VAR(AUTOSAR_uint8, AUTOMATIC) data ) {
     VAR(Std_ReturnType, AUTOMATIC) ret_val = RTE_E_OK;
     VAR(Std_ReturnType, AUTOMATIC) ret;

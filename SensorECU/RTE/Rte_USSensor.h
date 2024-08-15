@@ -16,32 +16,43 @@
 /* include headers                                                            */
 /*----------------------------------------------------------------------------*/
 
+/*----------------------------------------------------------------------------*/
+/* type definition                                                            */
+/*----------------------------------------------------------------------------*/
+typedef uint8_t USSensor_uint8_t;
+
+typedef uint8_t* pUSSensor_uint8_t;
+
+typedef struct {
+    USSensor_uint8 Distance_S0;
+    USSensor_uint8 Distance_S1;
+    USSensor_uint8 Distance_S2;
+    USSensor_uint8 Distance_S3;
+} DistanceGroup_t;
 
 /*----------------------------------------------------------------------------*/
 /* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_USSensor_R_IO_GetDistance( VAR(USSensor_IoHwAb_SensorIdType, AUTOMATIC) id, P2VAR(USSensor_uint8p, AUTOMATIC, RTE_APPL_DATA) value );
-#define Rte_Call_R_IO_GetDistance Rte_Call_USSensor_R_IO_GetDistance
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S0( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value );
+#define Rte_Call_R_IO_IO_GetDistance_S0 Rte_Call_USSensor_R_IO_GetDistance_S0
 
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance_S0( VAR(USSensor_uint8, AUTOMATIC, RTE_APPL_DATA) value );
-#define Rte_Write_P_PP_DistanceUS_SendDistance_S0 Rte_Write_USSensor_P_PP_DistanceUS_SendDistance_S0
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S1( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value );
+#define Rte_Call_R_IO_IO_GetDistance_S1 Rte_Call_USSensor_R_IO_GetDistance_S1
 
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance_S1( VAR(USSensor_uint8, AUTOMATIC, RTE_APPL_DATA) value );
-#define Rte_Write_P_PP_DistanceUS_SendDistance_S1 Rte_Write_USSensor_P_PP_DistanceUS_SendDistance_S1
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S2( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value );
+#define Rte_Call_R_IO_IO_GetDistance_S2 Rte_Call_USSensor_R_IO_GetDistance_S2
 
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance_S2( VAR(USSensor_uint8, AUTOMATIC, RTE_APPL_DATA) value );
-#define Rte_Write_P_PP_DistanceUS_SendDistance_S2 Rte_Write_USSensor_P_PP_DistanceUS_SendDistance_S2
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S3( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value );
+#define Rte_Call_R_IO_IO_GetDistance_S3 Rte_Call_USSensor_R_IO_GetDistance_S3
 
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance_S3( VAR(USSensor_uint8, AUTOMATIC, RTE_APPL_DATA) value );
-#define Rte_Write_P_PP_DistanceUS_SendDistance_S3 Rte_Write_USSensor_P_PP_DistanceUS_SendDistance_S3
+FUNC(Std_ReturnType, RTE_CODE) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance ( VAR(USSensor_uint8_t, AUTOMATIC) data );
+#define Rte_Write_P_PP_DistanceUS_SendDistance Rte_Write_USSensor_P_PP_DistanceUS_SendDistance
 
-/* Runable */
+/*----------------------------------------------------------------------------*/
+/* Runnable                                                                   */
+/*----------------------------------------------------------------------------*/
 FUNC(void, AUTOMATIC) MeasureDistance( VAR(void, AUTOMATIC) );
 #define RTE_RUNNABLE_Run_MeasureDistance MeasureDistance
-
-
-
-
 
 #endif /* RTE_SENSOR_H */
 

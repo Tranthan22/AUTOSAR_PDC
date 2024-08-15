@@ -22,11 +22,11 @@ static VAR(USSensor_uint8, AUTOMATIC) Distance_S1;
 static VAR(USSensor_uint8, AUTOMATIC) Distance_S2;
 static VAR(USSensor_uint8, AUTOMATIC) Distance_S3;
 
-
 /*----------------------------------------------------------------------------*/
 /* functions and function style macros                                        */
 /*----------------------------------------------------------------------------*/
 FUNC(void, RTE_CODE_EcucPartition_0) Rte_COMCbk_RP_DistanceUS(void) {
+    VAR(void, AUTOMATIC)Com_ReceiveSignalGroup(ComConf_ComGroupSignal_ComISignal_HS_CAN1_Distance);
 
     //Copy the data of the signal to the referenced position
     VAR(void, AUTOMATIC)Com_ReceiveSignal(, &Distance_S1);

@@ -4,7 +4,8 @@
         "rte_ussensor.h": "c",
         "ultrasonicsensor_swc.h": "c",
         "rte_pdc_control.h": "c",
-        "rte_pdc_service.h": "c"
+        "rte_pdc_service.h": "c",
+        "rte_appcomtxrx.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

@@ -17,12 +17,10 @@
 /*----------------------------------------------------------------------------*/
 
 
-
-
 /*----------------------------------------------------------------------------*/
 /* functions and function style macros                                        */
 /*----------------------------------------------------------------------------*/
-extern FUNC(void, RTE_CODE_EcucPartition_0) Rte_MeasureDistance( VAR(void, AUTOMATIC) );
+extern FUNC(void, RTE_CODE) Rte_MeasureDistance( VAR(void, AUTOMATIC) );
 
 TASK (DistanceMeasureTask) {
     VAR(EventMaskType, AUTOMATIC) Event;
