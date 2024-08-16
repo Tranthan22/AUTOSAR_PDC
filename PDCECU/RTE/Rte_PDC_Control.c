@@ -45,7 +45,7 @@ extern FUNC(Std_ReturnType, RTE_CODE) Rte_Read_ParkDistanceControl_R_RP_Distance
 /******************************************************************************/
 
 /******************************************************************************/
-extern VAR(AUTOSAR_uint8, AUTOMATIC) Rte_Read_AlarmSystem_AlarmLevel_Value;
+extern VAR(AlarmLevel_uint8_t, AUTOMATIC) Rte_Read_AlarmSystem_AlarmLevel_Value;
 extern VAR(Std_ReturnType, AUTOMATIC) Rte_Read_AlarmSystem_AlarmLevel_status = RTE_E_NEVER_RECEIVED;
 
 FUNC(Std_ReturnType, RTE_CODE) Rte_Write_ParkDistanceControl_P_PP_Alarm_SendAlarmLevel( VAR(AlarmLevel_uint8_t, AUTOMATIC, RTE_APPL_DATA) data ) {

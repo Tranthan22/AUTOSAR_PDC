@@ -21,7 +21,7 @@
 /*----------------------------------------------------------------------------*/
 /* functions and function style macros                                        */
 /*----------------------------------------------------------------------------*/
-extern FUNC(Std_ReturnType, RTE_CODE) GetDistance_S0( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA));
+extern FUNC(Std_ReturnType, IoHwAb_CODE) GetDistance_S0( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA));
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S0( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value ) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
 
@@ -29,7 +29,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S0( P2VAR(pUSS
     return return_value;
 }
 
-extern FUNC(Std_ReturnType, RTE_CODE) GetDistance_S1( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA));
+extern FUNC(Std_ReturnType, IoHwAb_CODE) GetDistance_S1( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA));
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S1( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value ) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
 
@@ -37,7 +37,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S1( P2VAR(pUSS
     return return_value;
 }
 
-extern FUNC(Std_ReturnType, RTE_CODE) GetDistance_S2( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA));
+extern FUNC(Std_ReturnType, IoHwAb_CODE) GetDistance_S2( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA));
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S2( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value ) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
 
@@ -45,7 +45,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S2( P2VAR(pUSS
     return return_value;
 }
 
-extern FUNC(Std_ReturnType, RTE_CODE) GetDistance_S3( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA));
+extern FUNC(Std_ReturnType, IoHwAb_CODE) GetDistance_S3( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA));
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S3( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value ) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
 
