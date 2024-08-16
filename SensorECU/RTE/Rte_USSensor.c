@@ -164,27 +164,34 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance( 
     return ret_val;
 }
 
-
-/**********************************  Section 2 ******************************* */
-/*******************************************************************************/
-/* Name        : Rte_MeasureDistance                                           */
-/* Trigger     :                                                               */
-/* Param       : VAR(void, AUTOMATIC)                                          */
-/* Return      : FUNC(void, RTE_CODE)                                          */
-/* Contents    : This function serves as a wrapper for calling the application */
-/*               function `MeasureDistance`. It does not take any parameters or */
-/*               return any values.                                            */
-/*               1. Calls the `MeasureDistance` function, which is responsible  */
-/*                  for performing the distance measurement operations.         */
-/*               2. This function is part of the Runtime Environment (RTE) and  */
-/*                  is used to ensure that the application code can be executed  */
-/*                  in the context of the RTE.                                 */
+/********************************************************************************/
+/* Name        : Rte_MeasureDistance                                            */
+/* Trigger     :                                                                */
+/* Param       : VAR(void, AUTOMATIC)                                           */
+/* Return      : FUNC(void, RTE_CODE)                                           */
+/* Contents    : This function serves as a wrapper                              */
 /* Note        : This function provides a way to integrate the application-level*/
 /*               functionality with the RTE, facilitating seamless interaction. */
-/*******************************************************************************/
+/********************************************************************************/
 extern FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) );
 FUNC(void, RTE_CODE) Rte_MeasureDistance( VAR(void, AUTOMATIC) ) {
 
     MeasureDistance();
+
+}
+
+/********************************************************************************/
+/* Name        : Rte_USSensorInit                                            */
+/* Trigger     :                                                                */
+/* Param       : VAR(void, AUTOMATIC)                                           */
+/* Return      : FUNC(void, RTE_CODE)                                           */
+/* Contents    : This function serves as a wrapper                              */
+/* Note        : This function provides a way to integrate the application-level*/
+/*               functionality with the RTE, facilitating seamless interaction. */
+/********************************************************************************/
+extern FUNC(void, AppSensor_CODE) USSensorInit( VAR(void, AUTOMATIC) );
+FUNC(void, RTE_CODE) Rte_USSensorInit( VAR(void, AUTOMATIC) ) {
+
+    USSensorInit();
 
 }

@@ -17,8 +17,8 @@
 /* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Read_PDCService_R_RP_PDCService_StartPDCControl( P2VAR(PackDistanceControl_Service_uint8, AUTOMATIC) Start_PDCControl);
-#define Rte_Read_R_PP_PDCService_StartPDCControl Rte_Read_PDCService_R_RP_PDCService_StartPDCControl 
+FUNC(Std_ReturnType, RTE_CODE) Rte_Read_PDCService_R_RP_PDCService_PDC_OnOff( P2VAR(PDC_Status_uint8_t, AUTOMATIC, RTE_APPL_DATA) data);
+#define Rte_Read_R_PP_PDCService_PDC_OnOff Rte_Read_PDCService_R_RP_PDCService_PDC_OnOff 
 
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_PDCService_R_IO_PDCStatus_SendPDCStatus( VAR(PDC_Status_uint8_t, AUTOMATIC) data );
 #define Rte_Call_R_IO_SendPDCStatus Rte_Call_PDCService_R_IO_PDCStatus_SendPDCStatus 

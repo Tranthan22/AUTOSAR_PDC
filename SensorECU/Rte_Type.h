@@ -31,6 +31,15 @@ typedef struct {
 
 typedef DistanceGroup_t* pDistanceGroup_t;
 
+typedef struct
+{
+    USSensor_uint8_t SensorOffset_0;
+    USSensor_uint8_t SensorOffset_1;
+    USSensor_uint8_t SensorOffset_2;
+    USSensor_uint8_t SensorOffset_3;
+} SensorOffset_t;
+
+
 #endif /* RTE_TYPE_H */
 
 /* End 

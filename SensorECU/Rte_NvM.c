@@ -1,13 +1,10 @@
 /******************************************************************************/
 /* System Name : Park Distance Control                                        */
-/* File Name   : Rte_Cbk.h                                                    */
+/* File Name   : Rte_NvM.c                                                    */
 /* Contents    : Ecu Configuration(Ecuc)                                      */
 /* Author      : HN24_FR_AUTOSAR_02_Group_3                                   */
 /* Note        :                                                              */
 /******************************************************************************/
-
-#ifndef RTE_CBK_H
-#define RTE_CBK_H
 
 /*----------------------------------------------------------------------------*/
 /* include headers                                                            */
@@ -16,11 +13,20 @@
 /*----------------------------------------------------------------------------*/
 /* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
-FUNC(void, RTE_CODE) Rte_COMCbk_ComISignal_RP_DistanceUS( VAR(void, AUTOMATIC) );
+extern NvM_Writeblock_NVM_Sensor ( VAR(NvM_BlockIdType, AUTOMATIC), P2CONST(void, AUTOMATIC, RTE_APPL_DATA) );
 
-FUNC(void, RTE_CODE) Rte_COMCbk_ComISignal_RP_PDCService( VAR(void, AUTOMATIC) );
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvM_Service_Writeblock_NVM_Sensor( P2CONST(void, AUTOMATIC, RTE_APPL_DATA) data ) {
+    VAR(Std_ReturnType, AUTOMATIC) return_value;
 
+    return_value = NvM_Writeblock_NVM_Sensor( NVM_Sensor_ID, data );
+    return return_value;
+}
 
-#endif /* RTE_CBK_H */
+extern NvM_Readblock_NVM_Sensor ( VAR(NvM_BlockIdType, AUTOMATIC), P2VAR(void, AUTOMATIC, RTE_APPL_DATA) );
 
-/* End of Rte_Cbk.h */
+FUNC(Std_ReturnType, RTE_CODE) Rte_Call_NvM_Service_Readblock_NVM_Sensor( P2VAR(void, AUTOMATIC, RTE_APPL_DATA) data ) {
+    VAR(Std_ReturnType, AUTOMATIC) return_value;
+
+    return_value = NvM_Writeblock_NVM_Sensor( NVM_Sensor_ID, data );
+    return return_value;
+}

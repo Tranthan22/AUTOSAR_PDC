@@ -91,7 +91,8 @@ TASK (ServiceTask) {
         (VAR(void, AUTOMATIC))ClearEvent( Event & ( OS_CE_PDCService ) );
 
         if( (Event & OS_CE_PDCService) > 0U ) {
-            // Runnale Service
+            
+            Rte_PDCService();
             
         }
     }

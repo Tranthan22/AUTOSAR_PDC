@@ -29,8 +29,15 @@
 VAR(PDC_Status_uint8_t, AUTOMATIC) Rte_Read_PDC_Service_active_Value;
 VAR(Std_ReturnType, AUTOMATIC) Rte_Read_PDC_Service_active_status = RTE_E_NEVER_RECEIVED;
 
-FUNC(Std_ReturnType, RTE_CODE) Rte_Read_PDCService_R_RP_PDCService_StartPDCControl( P2VAR(PackDistanceControl_Service_uint8, AUTOMATIC) Start_PDCControl) {
-    
+FUNC(Std_ReturnType, RTE_CODE) Rte_Read_PDCService_R_RP_PDCService_PDC_OnOff( P2VAR(PDC_Status_uint8_t, AUTOMATIC, RTE_APPL_DATA) data) {
+    VAR(Std_ReturnType, AUTOMATIC) ret_val;
+
+    RTE_Q_LOCK();
+    *data = Rte_Read_PDC_Service_active_Value;
+    ret_val = Rte_Read_PDC_Service_active_status;
+    RTE_Q_UNLOCK();
+
+    return ret_val;
 }
 
 /******************************************************************************/

@@ -35,6 +35,16 @@ typedef uint8_t AlarmLevel_uint8_t;
 
 typedef uint8_t PDC_Status_uint8_t;
 
+typedef struct
+{
+    AlarmLevel_uint8_t AlarmLevel_1;
+    AlarmLevel_uint8_t AlarmLevel_2;
+    AlarmLevel_uint8_t AlarmLevel_3;
+    AlarmLevel_uint8_t AlarmLevel_4;
+    AlarmLevel_uint8_t AlarmLevel_5;
+} AlarmLevel_t;
+
+
 #endif /* RTE_TYPE_H */
 
 /* End 
