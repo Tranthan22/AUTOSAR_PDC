@@ -21,19 +21,8 @@
 /* Param       : VAR(void, AUTOMATIC)                                          */
 /* Return      : FUNC(void, RTE_CODE)                                          */
 /* Contents    : This function handles the reception of the signal group       */
-/*               related to the distance measurement from the CAN bus. It      */
-/*               performs the following steps:                                 */
-/*               1. Receives the signal group from the I-PDU and stores it     */
-/*                  into a shadow buffer.                                      */
-/*               2. Copies individual signals from the shadow buffer to the    */
-/*                  appropriate positions in the `DistanceGroup` structure.    */
-/*               3. Updates the status to indicate successful reception of     */
-/*                  the distance control data.                                 */
-/*               4. Triggers an event to notify that distance data has been    */
-/*                  received.                                                  */
-/* Note        : The function uses external variables to store the distance    */
-/*               group data and update the status. It also triggers a specific */
-/*               event to handle the received data further.                    */
+/*               related to the distance measurement from the CAN bus.         */
+/* Note        :                                                               */
 /*******************************************************************************/
 extern VAR(DistanceGroup_t, AUTOMATIC) Rte_Read_PDC_Control_DistanceGroup_Value;
 extern VAR(Std_ReturnType, AUTOMATIC) Rte_Read_PDC_Control_Value_status;
@@ -55,23 +44,11 @@ FUNC(void, RTE_CODE) Rte_COMCbk_ComISignal_RP_DistanceUS( VAR(void, AUTOMATIC) )
 }
 /*******************************************************************************/
 /* Name        : Rte_COMCbk_ComISignal_RP_PDCService                           */
-/* Trigger     :                                                               */
 /* Param       : VAR(void, AUTOMATIC)                                          */
 /* Return      : FUNC(void, RTE_CODE)                                          */
-/* Contents    : This function handles the reception of the PDC (Park Distance */
-/*               Control) service status signal from the CAN bus. The function */
-/*               performs the following steps:                                 */
-/*               1. Receives the PDC service status signal from the CAN bus    */
-/*                  and stores it in a local variable.                         */
-/*               2. If the reception is successful (indicated by `E_OK`), the  */
-/*                  function locks the RTE queue, updates the service status   */
-/*                  and value, and then unlocks the RTE queue.                 */
-/*               3. Triggers an event (`OS_CE_PDCService`) to notify the       */
-/*                  system that the PDC service status has been received and   */
-/*                  updated.                                                   */
-/* Note        : The function uses external variables to store the PDC service */
-/*               status and value, and it ensures thread-safe access by        */
-/*               locking and unlocking the RTE queue during the update.        */
+/* Brief       : This function handles the reception of the PDC service status */
+/*               signal from the CAN bus.                                      */
+/* Note        :                                                               */
 /*******************************************************************************/
 
 extern VAR(PDC_Status_uint8_t, AUTOMATIC) Rte_Read_PDC_Service_active_Value;

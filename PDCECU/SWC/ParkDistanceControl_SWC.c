@@ -8,6 +8,7 @@
 
 #include "Rte_PDC_Control.h"
 #include "Rte_PDC_Service.h"
+#include "Rte_NvM.h"
 
 FUNC(void, AppControl_CODE) ProcessControl( VAR(void, AUTOMATIC) )
 {

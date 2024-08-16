@@ -24,14 +24,12 @@ extern FUNC(Std_ReturnType, IoHwAb_CODE) IoHwAb_AlarmWarning( VAR(AlarmLevel_uin
 /* Name        : Rte_Call_AlarmSystem_R_IO_WarningAlarm                        */
 /* Param       : VAR(AlarmLevel_uint8_t, AUTOMATIC)                            */
 /* Return      : FUNC(Std_ReturnType, RTE_CODE)                                */
-/* Contents    : The `Rte_Call_AlarmSystem_R_IO_WarningAlarm` function is used */
-/*               to trigger an alarm warning in the system,passing the         */
+/* Brief       : Used to trigger an alarm warning in the system,passing the    */
 /*               provided alarm level as a parameter. The result of the        */
 /*               operation is returned, indicating whether the alarm was       */
 /*               successfully triggered or if an error occurred.               */
 /* Note        :                                                               */
 /*******************************************************************************/
-
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_AlarmSystem_R_IO_WarningAlarm( VAR(AlarmLevel_uint8_t, AUTOMATIC) data) {
     VAR(Std_ReturnType, AUTOMATIC) return_value;
 
@@ -44,7 +42,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_AlarmSystem_R_IO_WarningAlarm( VAR(Alarm
 /* Name        : Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel                */
 /* Param       : P2VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) alarm_level*/
 /* Return      : FUNC(Std_ReturnType, RTE_CODE)                                */
-/* Contents    : Reads the current alarm level and returns the status of the   */
+/* Brief       : Reads the current alarm level and returns the status of the   */
 /*               operation.                                                    */
 /* Note        :                                                               */
 /*******************************************************************************/
@@ -70,7 +68,7 @@ extern FUNC(void, AppAlarm_CODE) ExecuteAlarmCommand( VAR(void, AUTOMATIC) );
 /* Name        : Rte_ExecuteAlarmCommand                                       */
 /* Param       : VAR(void, AUTOMATIC)                                          */
 /* Return      :                                                               */
-/* Contents    :                                                               */
+/* Brief       :                                                               */
 /* Note        :                                                               */
 /*******************************************************************************/
 FUNC(void, RTE_CODE) Rte_ExecuteAlarmCommand( VAR(void, AUTOMATIC) ) {

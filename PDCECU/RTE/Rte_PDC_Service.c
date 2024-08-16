@@ -18,14 +18,12 @@
 
 /*******************************************************************************/
 /* Name        : Rte_Read_PDCService_R_RP_PDCService_StartPDCControl           */
-/* Trigger     :                                                               */
-/* Param       : P2VAR(PackDistanceControl_Service_uint8, AUTOMATIC) Start_PDCControl */
+/* Param       : P2VAR(PDC_Status_uint8_t, AUTOMATIC) Start_PDCControl         */
 /* Return      : FUNC(Std_ReturnType, RTE_CODE)                                */
-/* Contents    : Reads the status of PDC service activation from the system    */
+/* Brief       : Reads the status of PDC service activation from the system    */
 /*               and updates the provided variable with the current status.    */
 /* Note        :                                                               */
 /*******************************************************************************/
-
 VAR(PDC_Status_uint8_t, AUTOMATIC) Rte_Read_PDC_Service_active_Value;
 VAR(Std_ReturnType, AUTOMATIC) Rte_Read_PDC_Service_active_status = RTE_E_NEVER_RECEIVED;
 
@@ -42,10 +40,9 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Read_PDCService_R_RP_PDCService_PDC_OnOff( P2
 
 /******************************************************************************/
 /* Name        : Rte_Call_PDCService_R_IO_PDCStatus_SendPDCStatus              */
-/* Trigger     :                                                               */
 /* Param       : P2VAR(PDC_Status_uint8_t, AUTOMATIC, RTE_APPL_DATA) data      */
 /* Return      : FUNC(Std_ReturnType, RTE_CODE)                                */
-/* Contents    : Calls the IoHwAb layer function to send the current PDC       */
+/* Brief       : Calls the IoHwAb layer function to send the current PDC       */
 /*               (Park Distance Control) status and returns the result of the  */
 /*               operation. The provided data pointer is used to pass the      */
 /*               status information to the hardware abstraction layer.         */
@@ -60,16 +57,13 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Call_PDCService_R_IO_PDCStatus_SendPDCStatus(
     return return_value;
 }
 
-/**********************************  Section 2 ******************************* */
 /*******************************************************************************/
 /* Name        : Rte_PDCService                                                */
-/* Trigger     :                                                               */
 /* Param       : VAR(void, AUTOMATIC)                                          */
 /* Return      : FUNC(void, RTE_CODE)                                          */
-/* Contents    : This function acts as a wrapper to call the PDCService        */
+/* Brief       : This function acts as a wrapper to call the PDCService        */
 /*               function, which handles the Park Distance Control (PDC)       */
-/*               service logic. It does not take any parameters and does not   */
-/*               return any value.                                             */
+/*               service logic.                                                */
 /* Note        :                                                               */
 /*******************************************************************************/
 extern FUNC(void, AppControl_CODE) PDCService ( VAR(void, AUTOMATIC) );

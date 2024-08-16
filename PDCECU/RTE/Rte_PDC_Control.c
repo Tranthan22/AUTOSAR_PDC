@@ -22,10 +22,9 @@
 
 /*******************************************************************************/
 /* Name        : Rte_Read_ParkDistanceControl_R_RP_DistanceUS_ReadDistance     */
-/* Trigger     :                                                               */
 /* Param       : P2VAR(pDistanceGroup_t, AUTOMATIC, RTE_APPL_DATA) data        */
 /* Return      : FUNC(Std_ReturnType, RTE_CODE)                                */
-/* Contents    : Reads the current distance values from the Park Distance      */
+/* Brief       : Reads the current distance values from the Park Distance      */
 /*               Control (PDC) system and returns the status of the operation. */
 /* Note        :                                                               */
 /*******************************************************************************/
@@ -48,10 +47,9 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Read_ParkDistanceControl_R_RP_DistanceUS_Read
 
 /*******************************************************************************/
 /* Name        : Rte_Write_ParkDistanceControl_P_PP_Alarm_SendAlarmLevel       */
-/* Trigger     :                                                               */
 /* Param       : VAR(AlarmLevel_uint8_t, AUTOMATIC, RTE_APPL_DATA) data        */
 /* Return      : FUNC(Std_ReturnType, RTE_CODE)                                */
-/* Contents    : Writes the given alarm level to the system and updates the    */
+/* Brief       : Writes the given alarm level to the system and updates the    */
 /*               status to indicate successful writing.                        */
 /* Note        :                                                               */
 /*******************************************************************************/
