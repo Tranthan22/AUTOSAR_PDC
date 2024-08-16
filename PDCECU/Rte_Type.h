@@ -35,6 +35,8 @@ typedef DistanceGroup_t* pDistanceGroup_t;
 
 typedef uint8_t AlarmLevel_uint8_t;
 
+typedef uint8_t PDC_Status_uint8_t;
+
 #endif /* RTE_TYPE_H */
 
 /* End 

@@ -50,7 +50,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel( P
 
 
 /**********************************  Section 2 ******************************* */
-extern FUNC(void, RTE_CODE) ExecuteAlarmCommand( VAR(void, AUTOMATIC) );
+extern FUNC(void, AppAlarm_CODE) ExecuteAlarmCommand( VAR(void, AUTOMATIC) );
 
 FUNC(void, RTE_CODE) Rte_ExecuteAlarmCommand( VAR(void, AUTOMATIC) ) {
 

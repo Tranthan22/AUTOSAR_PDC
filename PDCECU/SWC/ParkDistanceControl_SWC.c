@@ -1,7 +1,7 @@
 #include "Rte_PDC_Control.h"
 #include "Rte_PDC_Service.h"
 
-FUNC(void, RTE_CODE) ProcessControl( VAR(void, AUTOMATIC) )
+FUNC(void, AppControl_CODE) ProcessControl( VAR(void, AUTOMATIC) )
 {
     DistanceGroup_t DistanceGroup;
     USSensor_uint8_t MinDistance; 

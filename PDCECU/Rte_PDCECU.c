@@ -47,24 +47,21 @@ TASK (DistanceAlarmTask) {
 }
 
 /*==========================================================================*/
-extern FUNC(void, RTE_CODE_EcucPartition_0) Rte_PDCService ( VAR(void, AUTOMATIC) );
+extern FUNC(void, RTE_CODE) Rte_PDCService ( VAR(void, AUTOMATIC) );
 
 TASK (ServiceTask) {
     VAR(EventMaskType, AUTOMATIC) Event;
 
     while( 1 )
     {
-        (VAR(void, AUTOMATIC))WaitEvent( OS_CE_PDCService );
+        (VAR(void, AUTOMATIC))WaitEvent( c );
         Event = 0U;
         (VAR(void, AUTOMATIC))GetEvent( ServiceTask, &Event );
         (VAR(void, AUTOMATIC))ClearEvent( Event & ( OS_CE_PDCService ) );
 
-        if( (Event & OS_TE_50ms_DistanceMeasure) > 0U ) {
-
+        if( (Event & OS_CE_PDCService) > 0U ) {
             // Runnale Service
-            if() {
-                
-            }            
+            
         }
     }
 }

@@ -37,7 +37,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance (
 /*----------------------------------------------------------------------------*/
 /* Runnable                                                                   */
 /*----------------------------------------------------------------------------*/
-FUNC(void, AUTOMATIC) MeasureDistance( VAR(void, AUTOMATIC) );
+FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) );
 #define RTE_RUNNABLE_Run_MeasureDistance MeasureDistance
 
 #endif /* RTE_SENSOR_H */

@@ -18,9 +18,9 @@
 /*----------------------------------------------------------------------------*/
 /* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
-FUNC(void, RTE_CODE_EcucPartition_0) Rte_COMCbk_ComISignal_RP_DistanceUS(void);
+FUNC(void, RTE_CODE) Rte_COMCbk_ComISignal_RP_DistanceUS( VAR(void, AUTOMATIC) );
 
-
+FUNC(void, RTE_CODE) Rte_COMCbk_ComISignal_RP_PDCService( VAR(void, AUTOMATIC) );
 
 
 #endif /* RTE_CBK_H */

@@ -81,7 +81,7 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_USSensor_P_PP_DistanceUS_SendDistance( 
 
 
 /**********************************  Section 2 ******************************* */
-extern FUNC(void, RTE_CODE) MeasureDistance( VAR(void, AUTOMATIC) );
+extern FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) );
 FUNC(void, RTE_CODE) Rte_MeasureDistance( VAR(void, AUTOMATIC) ) {
 
     MeasureDistance();

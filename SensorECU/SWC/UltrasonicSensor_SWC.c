@@ -1,6 +1,6 @@
 #include "UltrasonicSensor_SWC.h"
 
-FUNC(void, RTE_CODE) MeasureDistance( VAR(void, AUTOMATIC) )
+FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) )
 {
     VAR(DistanceGroup_t, AUTOMATIC) DistanceGroup;
     /* Read data from 4 sensors */
@@ -14,7 +14,7 @@ FUNC(void, RTE_CODE) MeasureDistance( VAR(void, AUTOMATIC) )
     Rte_Call_WdgMCheckpointReached(SE1_ID,CP_ID_2);                                 // End checkpoint Deadline SE1
     
     /* Send to PDCECU */
-    Rte_Write_P_PP_DistanceUS_SendDistance(Distance);
+    Rte_Write_P_PP_DistanceUS_SendDistance(DistanceGroup);
 	
     Rte_Call_WdgMCheckpointReached(SE1_ID,CP_ID_0);                                     // Alive SE1
 }
