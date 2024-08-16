@@ -17,20 +17,6 @@
 /*----------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------*/
-/* type definition                                                            */
-/*----------------------------------------------------------------------------*/
-typedef uint8_t USSensor_uint8_t;
-
-typedef uint8_t* pUSSensor_uint8_t;
-
-typedef struct {
-    USSensor_uint8 Distance_S0;
-    USSensor_uint8 Distance_S1;
-    USSensor_uint8 Distance_S2;
-    USSensor_uint8 Distance_S3;
-} DistanceGroup_t;
-
-/*----------------------------------------------------------------------------*/
 /* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
 FUNC(Std_ReturnType, RTE_CODE) Rte_Call_USSensor_R_IO_GetDistance_S0( P2VAR(pUSSensor_uint8_t, AUTOMATIC, RTE_APPL_DATA) value );

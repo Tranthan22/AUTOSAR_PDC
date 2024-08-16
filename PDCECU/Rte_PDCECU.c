@@ -18,19 +18,18 @@
 /*----------------------------------------------------------------------------*/
 
 
-
 /*----------------------------------------------------------------------------*/
 /* functions and function style macros                                        */
 /*----------------------------------------------------------------------------*/
-extern FUNC(void, RTE_CODE_EcucPartition_0) Rte_ProcessControl( VAR(void, AUTOMATIC) );
-extern FUNC(void, RTE_CODE_EcucPartition_0) Rte_ExecuteAlarmCommand( VAR(void, AUTOMATIC) );
+extern FUNC(void, RTE_CODE) Rte_ProcessControl( VAR(void, AUTOMATIC) );
+extern FUNC(void, RTE_CODE) Rte_ExecuteAlarmCommand( VAR(void, AUTOMATIC) );
 
 TASK (DistanceAlarmTask) {
     VAR(EventMaskType, AUTOMATIC) Event;
 
     while( 1 )
     {
-        (VAR(void, AUTOMATIC))WaitEvent( OS_CE_AlarmCommand );
+        (VAR(void, AUTOMATIC))WaitEvent( OS_CE_AlarmCommand | OS_CE_DistanceDataReceived );
         Event = 0U;
         (VAR(void, AUTOMATIC))GetEvent( DistanceAlarmTask, &Event );
         (VAR(void, AUTOMATIC))ClearEvent( Event & ( OS_CE_AlarmCommand | OS_CE_DistanceDataReceived ) );

@@ -33,14 +33,12 @@ FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Call_AlarmSystem_R_IO_Warning
 
 
 /******************************************************************************/
-/*
-*/
+
 /******************************************************************************/
+VAR(AUTOSAR_uint8, AUTOMATIC) Rte_Read_AlarmSystem_AlarmLevel_Value;
+VAR(Std_ReturnType, AUTOMATIC) Rte_Read_AlarmSystem__AlarmLevel_status = RTE_E_NEVER_RECEIVED;
 
-static VAR(AUTOSAR_uint8, AUTOMATIC) Distance_Group;
-VAR(Std_ReturnType, AUTOMATIC) Rte_Read_AppPDCControl_Value_status = RTE_E_NEVER_RECEIVED;
-
-FUNC(Std_ReturnType, RTE_CODE_EcucPartition_0) Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel( P2VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) alarm_level ) {
+FUNC(Std_ReturnType, RTE_CODE) Rte_Read_AlarmSystem_R_RP_Alarm_ReadAlarmLevel( P2VAR(AlarmSystem_uint8, AUTOMATIC, RTE_APPL_DATA) alarm_level ) {
     VAR(Std_ReturnType, AUTOMATIC) ret_val;
 
     RTE_Q_LOCK();
