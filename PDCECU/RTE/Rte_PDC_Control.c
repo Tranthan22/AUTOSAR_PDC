@@ -66,6 +66,8 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Write_ParkDistanceControl_P_PP_Alarm_SendAlar
     Rte_Read_AlarmSystem_AlarmLevel_status = RTE_E_OK;
     RTE_Q_UNLOCK();
 
+    VAR(void, AUTOMATIC)SetEvent(DistanceAlarmTask, OS_CE_AlarmCommand);
+
     return ret_val;
 }
 
