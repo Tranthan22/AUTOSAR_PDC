@@ -1,10 +1,8 @@
 /******************************************************************************/
-/* Copyright   : GROUP 3 Corporation                                          */
-/* System Name : AUTOSAR BSW                                                  */
+/* System Name : Park Distance Control                                        */
 /* File Name   : Rte_PDC_Service.h                                            */
-/* Version     : v1.0.0                                                       */
 /* Contents    : Ecu Configuration(Ecuc)                                      */
-/* Author      : DungDT                                                       */
+/* Author      : HN24_FR_AUTOSAR_02_Group_3                                   */
 /* Note        :                                                              */
 /******************************************************************************/
 

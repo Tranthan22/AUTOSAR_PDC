@@ -1,10 +1,8 @@
 /******************************************************************************/
-/* Copyright   :                                              */
-/* System Name : AUTOSAR BSW                                                  */
-/* File Name   : Rte_Partition_EcucPartition_0.c                              */
-/* Version     : v2.2.2                                                       */
+/* System Name : Park Distance Control                                        */
+/* File Name   : Rte_SensorECU.c                                              */
 /* Contents    : Ecu Configuration(Ecuc)                                      */
-/* Author      :                           */
+/* Author      : HN24_FR_AUTOSAR_02_Group_3                                   */
 /* Note        :                                                              */
 /******************************************************************************/
 

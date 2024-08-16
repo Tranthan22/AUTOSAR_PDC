@@ -1,13 +1,10 @@
 /******************************************************************************/
-/* Copyright   : Group 3 Corporation                                          */
-/* System Name : AUTOSAR BSW                                                  */
-/* File Name   : Rte_AppSensor.c                                              */
-/* Version     : v1.0.0                                                       */
+/* System Name : Park Distance Control                                        */
+/* File Name   : Rte_USSensor.c                                               */
 /* Contents    : Ecu Configuration(Ecuc)                                      */
-/* Author      : Tran Than                                                    */
+/* Author      : HN24_FR_AUTOSAR_02_Group_3                                   */
 /* Note        :                                                              */
 /******************************************************************************/
-
 
 /*----------------------------------------------------------------------------*/
 /* include headers                                                            */

@@ -1,3 +1,11 @@
+/******************************************************************************/
+/* System Name : Park Distance Control                                        */
+/* File Name   : UltrasonicSensor_SWC.c                                       */
+/* Contents    : Ecu Configuration(Ecuc)                                      */
+/* Author      : HN24_FR_AUTOSAR_02_Group_3                                   */
+/* Note        :                                                              */
+/******************************************************************************/
+
 #include "UltrasonicSensor_SWC.h"
 
 FUNC(void, AppSensor_CODE) MeasureDistance( VAR(void, AUTOMATIC) )

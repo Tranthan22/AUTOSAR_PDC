@@ -1,10 +1,8 @@
 /******************************************************************************/
-/* Copyright   : SCSK Corporation                                             */
-/* System Name : AUTOSAR BSW                                                  */
-/* File Name   : Rte_Cbk.c                                                    */
-/* Version     : v2.2.2                                                       */
+/* System Name : Park Distance Control                                        */
+/* File Name   : Rte_Cbk.c                                                   */
 /* Contents    : Ecu Configuration(Ecuc)                                      */
-/* Author      : QINeS Ecuc Generator 2019.12 (Java)                          */
+/* Author      : HN24_FR_AUTOSAR_02_Group_3                                   */
 /* Note        :                                                              */
 /******************************************************************************/
 

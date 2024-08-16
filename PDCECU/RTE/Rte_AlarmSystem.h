@@ -1,10 +1,8 @@
 /******************************************************************************/
-/* Copyright   : GROUP 3 Corporation                                          */
-/* System Name : AUTOSAR BSW                                                  */
-/* File Name   : Rte_AlarmSystem.h                                                */
-/* Version     : v1.0.0                                                       */
+/* System Name : Park Distance Control                                        */
+/* File Name   : Rte_AlarmSystem.h                                            */
 /* Contents    : Ecu Configuration(Ecuc)                                      */
-/* Author      : Nguyen Ngoc                                                    */
+/* Author      : HN24_FR_AUTOSAR_02_Group_3                                   */
 /* Note        :                                                              */
 /******************************************************************************/
 

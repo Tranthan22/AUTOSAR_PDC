@@ -1,3 +1,11 @@
+/******************************************************************************/
+/* System Name : Park Distance Control                                        */
+/* File Name   : ParkDistanceControl_SWC.c                                    */
+/* Contents    : Ecu Configuration(Ecuc)                                      */
+/* Author      : HN24_FR_AUTOSAR_02_Group_3                                   */
+/* Note        :                                                              */
+/******************************************************************************/
+
 #include "Rte_PDC_Control.h"
 #include "Rte_PDC_Service.h"
 
